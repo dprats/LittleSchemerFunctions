@@ -1,0 +1,1 @@
+; assuming a list is non-empty, return the list of intersections

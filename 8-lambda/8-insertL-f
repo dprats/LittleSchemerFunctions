@@ -1,0 +1,11 @@
+; insert to an atom NEW to the left of OLD based on test TEST?
+; we only insert ONCE 
+; this function returns a new function
+
+(define insertL-f
+	(lambda (test?)
+		(lambda (new old l)
+			(cond
+				((null? l) (quote ()))
+				((test? (car l) old) (cons new (cons old (cdr l)))
+				(else (cons (car l) ((insertL-f test?) new old (cdr l)))))))))
